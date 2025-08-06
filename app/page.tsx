@@ -21,7 +21,7 @@ export default function Home() {
   } = useForm<FormValues>({ resolver: zodResolver(formSchema) });
 
   const [minifiedLink, setMinifiedLink] = useState<string | null>(null);
-  //TODO: remove and make a singleton for this one
+
   const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
     const response = await fetch("/api/link", {
       method: "POST",
